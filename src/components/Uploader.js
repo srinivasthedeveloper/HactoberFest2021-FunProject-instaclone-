@@ -46,16 +46,16 @@ export default function Uploader({ isOpen, handleClose, handleUpload }) {
               setValid(true)
             } else {
               setValid(false)
-              handleClose(['uploader', false])
+              handleClose(false)
               handleUpload({
                 username: 'UserName2',
                 logo: 'image.jpg',
                 location: textRef.current.value,
                 caption: areaRef.current.value,
                 image: URL.createObjectURL(imageRef.current.files[0]),
-                comment: [],
                 isLiked: false,
                 isSaved: false,
+                comment: [],
               })
               console.log({
                 image: URL.createObjectURL(imageRef.current.files[0]),
@@ -77,7 +77,7 @@ export default function Uploader({ isOpen, handleClose, handleUpload }) {
         <button
           onClick={() => {
             setValid(false)
-            handleClose(['uploader', false])
+            handleClose(false)
           }}
           style={{
             ...styles.buttons,

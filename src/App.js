@@ -4,22 +4,12 @@ import Footer from './components/Footer'
 import Uploader from './components/Uploader'
 import Home from './screens/Home'
 import React, { useState } from 'react'
+import Sidebar from './components/Sidebar'
 
 function App() {
   const [isUploaderOpen, setUploaderOpen] = useState(false)
-  const [isCommentOpen, setCommentOpen] = useState(false)
-  const handleModal = (e) => {
-    switch (e[0]) {
-      case 'uploader':
-        setUploaderOpen(e[1])
-        break
-      case 'comment':
-        setCommentOpen(e[1])
-        break
-      default:
-        setUploaderOpen(false)
-        setCommentOpen(false)
-    }
+  const handleUploader = (e) => {
+    setUploaderOpen(e)
   }
   const [data, setData] = useState([
     {
@@ -58,28 +48,33 @@ function App() {
     let update = [...data]
     update[e[0]]['comment'].push(e[1])
     setData(update)
-    console.log(data)
+    // console.log(data)
   }
   return (
     <div className="app">
       <Header />
-      <div className="appHome">
-        <Home
-          data={data}
-          handleToogle={handleToogle}
-          handleComment={handleComment}
-        />
+      <div style={{ display: 'grid', placeItems: 'center' }}>
+        <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+          <div className="appHome">
+            <Home
+              data={data}
+              handleToogle={handleToogle}
+              handleComment={handleComment}
+            />
+          </div>
+          <Sidebar username="SrinivasTheDeveloper" logo={'image.jpg'} />
+        </div>
         <Uploader
           isOpen={isUploaderOpen}
-          handleClose={handleModal}
+          handleClose={handleUploader}
           handleUpload={handleUpload}
         />
       </div>
       <Footer
-        userName={'SrinivasTheDeveloper'}
+        username="SrinivasTheDeveloper"
         logo={'image.jpg'}
         isUploaderOpen={isUploaderOpen}
-        handleUploader={handleModal}
+        handleUploader={handleUploader}
       />
     </div>
   )

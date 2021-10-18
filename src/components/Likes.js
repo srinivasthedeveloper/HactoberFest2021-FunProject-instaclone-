@@ -14,6 +14,7 @@ export default function Likes({
   likes = 0,
   handleToogle,
   index,
+  handleClose,
 }) {
   // const [isLiked, setLiked] = useState(false)
   // const [isSaved, setSaved] = useState(false)
@@ -47,7 +48,11 @@ export default function Likes({
             }}
           />
         )}
-        <CommentOutlinedIcon className="iconStyles" style={styles.icon} />
+        <CommentOutlinedIcon
+          onClick={() => handleClose(true)}
+          className="iconStyles"
+          style={styles.icon}
+        />
         <TelegramIcon className="iconStyles" style={styles.icon} />
       </div>
       {isSaved ? (

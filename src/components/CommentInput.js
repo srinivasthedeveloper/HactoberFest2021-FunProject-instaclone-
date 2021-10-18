@@ -21,7 +21,7 @@ export default function CommentInput({ index, username, logo, handleComment }) {
                 msg: inputRef.current.value,
               },
             ])
-            console.log(inputRef.current.value)
+            // console.log(inputRef.current.value)
             inputRef.current.value = ''
           }
         }}

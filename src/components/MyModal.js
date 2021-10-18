@@ -4,10 +4,10 @@ import React from 'react'
 export default function MyModal({ children, handleClose, isOpen }) {
   return (
     <Modal
-      onBackdropClick={() => handleClose(['uploader', false])}
+      onBackdropClick={() => handleClose(false)}
       style={{ display: 'grid', placeItems: 'center' }}
       open={isOpen}
-      onClose={() => handleClose(['uploader', false])}
+      onClose={() => handleClose(false)}
     >
       {children}
     </Modal>

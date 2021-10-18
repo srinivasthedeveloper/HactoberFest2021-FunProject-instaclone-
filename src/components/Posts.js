@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import Likes from './Likes'
 import CommentInput from './CommentInput'
+import CommentScreen from './CommentScreen'
 import MyAvatar from './MyAvatar'
-
 export default function Posts({
   logo,
   index,
@@ -18,16 +18,43 @@ export default function Posts({
   handleComment,
 }) {
   const [isExpanded, setExpanded] = useState(false)
+  const [isCommentOpen, setCommentOpen] = useState(false)
   return (
     <div style={styles.container}>
+      <CommentScreen
+        handleComment={handleComment}
+        index={index}
+        username={username}
+        logo={logo}
+        caption={caption}
+        comment={comment}
+        isOpen={isCommentOpen}
+        handleClose={(e) => setCommentOpen(e)}
+      />
       <div style={styles.userData}>
-        <MyAvatar username={username} logo={logo} isActive={true} size="42px" />
-        <div style={{ margin: '0 0 0 12px', maxHeight: '42px' }}>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <h3>{username}</h3>
-            <h4 style={{ padding: '0 10px', color: '#0095f6' }}>Follow</h4>
+        <div
+          style={{
+            display: 'flex',
+            width: '100%',
+            justifyContent: 'space-between',
+          }}
+        >
+          <div style={{ display: 'flex' }}>
+            <MyAvatar
+              username={username}
+              logo={logo}
+              isActive={true}
+              size="42px"
+            />
+            <div style={{ margin: '0 0 0 12px', maxHeight: '42px' }}>
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                <h3>{username}</h3>
+                <h4 style={{ padding: '0 10px', color: '#0095f6' }}>Follow</h4>
+              </div>
+              <p style={{ color: 'grey' }}>{location}</p>
+            </div>
           </div>
-          <p style={{ color: 'grey' }}>{location}</p>
+          <h2 style={{ padding: '0 20px' }}>...</h2>
         </div>
       </div>
       <img
@@ -48,6 +75,7 @@ export default function Posts({
           likes={likes}
           handleToogle={handleToogle}
           index={index}
+          handleClose={(e) => setCommentOpen(e)}
         />
         <h4 style={{ padding: '0 0 10px 10px' }}>{likes} likes</h4>
         {!isExpanded &&
@@ -83,7 +111,10 @@ export default function Posts({
           </div>
         )}
         {comment.length ? (
-          <p style={{ color: 'grey', padding: '0 10px 10px 10px' }}>
+          <p
+            onClick={() => setCommentOpen(true)}
+            style={{ color: 'grey', padding: '0 10px 10px 10px' }}
+          >
             View all {comment.length} comments
           </p>
         ) : (
