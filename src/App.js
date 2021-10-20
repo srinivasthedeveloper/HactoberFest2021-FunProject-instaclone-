@@ -13,27 +13,27 @@ function App() {
   }
   const [data, setData] = useState([
     {
-      username: 'srinivasTheDeveloper',
+      username: 'starletnova',
       location: 'chennai',
       caption:
-        'his blah blah blah content his blah blah blah content his blah blah blah content his blah blah blah content his blah blah blah content \nhis blah blah blah content \n.\n.\n.\nhis blah blah blah content \nhis blah blah blah content \n',
-      logo: 'image.jpg',
-      image: 'image.jpg',
+        'Tag that competitive programmer😂\n.\n©: LinkedIn il suttathu\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n#maranacoder #css #frontend #backend #code #infosys #itdood #itmemes #tcs #google #Infosys #ithunammapage #c #java #tamil #mokkapostu #leetcode #competitiveprogramming #codechef #hackerrank #code #officememes #office #tamil #itteam #itdood #tamilmemes #google #coder #hoodie #interview #linkedin',
+      logo: 'image1.jpg',
+      image: 'image2.jpg',
       isLiked: false,
       isSaved: false,
       likes: 100,
       comment: [{ user: 'username', msg: 'comment' }],
     },
     {
-      username: 'srinivasTheDeveloper',
+      username: 'elonaHolmes',
       location: 'mumbai',
       caption: 'his blah blah blah content2',
-      logo: 'image.jpg',
-      image: 'image.jpg',
+      logo: 'image2.jpg',
+      image: 'image1.jpg',
       isLiked: true,
       isSaved: true,
       likes: 10,
-      comment: [{ user: 'username1', msg: 'comment1' }],
+      comment: [{ user: 'SrinivasTheDeveloper', msg: 'This is awesome keep doing great',logo:'image.jpg' }],
     },
   ])
   const handleToogle = (e) => {

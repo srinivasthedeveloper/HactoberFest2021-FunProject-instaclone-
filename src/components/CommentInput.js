@@ -19,6 +19,7 @@ export default function CommentInput({ index, username, logo, handleComment }) {
               {
                 user: username,
                 msg: inputRef.current.value,
+                logo:logo,
               },
             ])
             // console.log(inputRef.current.value)
