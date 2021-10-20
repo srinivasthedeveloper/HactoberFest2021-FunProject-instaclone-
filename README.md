@@ -31,32 +31,11 @@ This repository is my pratic and still under development and I will continue to 
 #### 1. Clone the repo
 
 ```sh
-$ https://github.com/thiendangit/Instagram-Clone-Swift5.git
-$ cd Instagram-Clone-Swift5/
+$ https://github.com/srinivasthedeveloper/HactoberFest2021-FunProject-instaclone-.git
+$ cd HactoberFest2021-FunProject-instaclone/
+$ npm install
+$ npm run
 ```
-
-#### 2. Setup the firebase app
-
-1. You'll need to create a Firebase instance. Follow the instructions at https://console.firebase.google.com.
-2. Once your Firebase instance is created, you'll need to enable anonymous authentication.
-
-* Go to the Firebase Console for your new instance.
-* Click "Authentication" in the left-hand menu
-* Click the "sign-in method" tab
-* Click "Google" and enable it
-
-
-4. Enable the Firebase Database
-* Go to the Firebase Console
-* Click "Database" in the left-hand menu
-* Click the Cloudstore "Create Database" button
-* Select "Start in test mode" and "Enable"
-
-6 . (skip if not running on iOS)
-
-* Create an app within your Firebase instance for iOS, with your app package name
-* Follow instructions to download GoogleService-Info.plist
-* place google-services.json into /Instagram-Clone-Swift5/google-services.json.
 
 # Upcoming Features
  * Search for users
